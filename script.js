@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!data.enabled) {
       statusEl.innerText = "Status: Detection Paused";
       statusEl.className = "waiting";
-      return; // 🔴 stop graph update when paused
+      return; 
     }
 
     statusEl.innerText = `Status: ${data.status}`;
@@ -131,3 +131,4 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(update, 200);
 
 });
+
