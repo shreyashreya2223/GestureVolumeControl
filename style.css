@@ -1,0 +1,274 @@
+/* ========== GLOBAL RESET ========== */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Segoe UI", Arial, sans-serif;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* ========== HEADER ========== */
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.main-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Header toggles container (right side) */
+.header-toggles {
+  position: absolute;
+  right: 30px;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-size: 14px;
+}
+
+/* ========== DASHBOARD ========== */
+.dashboard {
+  height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 10px 30px;
+}
+
+/* ========== CARDS ========== */
+.card {
+  width: 460px;
+  height: 100%;
+  max-height: 610px;
+  padding: 14px;
+  border-radius: 16px;
+  box-shadow: 0 18px 35px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+/* ========== VIDEO (LARGE) ========== */
+.video-frame {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.15);
+  box-shadow: inset 0 0 18px rgba(0,0,0,0.4);
+}
+
+/* ========== VOLUME BAR ========== */
+.bar {
+  width: 85%;
+  height: 14px;
+  margin: 10px auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#fill {
+  height: 100%;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* ========== STATUS ========== */
+.waiting { color: #f59e0b; }
+.detected { color: #22c55e; }
+
+/* ========== BUTTONS (UNDER STATUS) ========== */
+.buttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  margin: 6px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+/* ========== TOGGLE SWITCH ========== */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 24px;
+}
+
+.switch input { display: none; }
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #ccc;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background: #2563eb;
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+}
+
+/* ========== GRAPH ========== */
+canvas {
+  width: 100%;
+  height: 260px;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.12);
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.45);
+}
+
+/* ========== DARK THEME ========== */
+body.dark {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: white;
+}
+
+body.dark .card {
+  background: linear-gradient(145deg, #020617, #020617);
+}
+
+body.dark .bar {
+  background: #334155;
+}
+
+body.dark #fill {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+body.dark button {
+  background: #2563eb;
+  color: white;
+}
+
+/* ========== LIGHT THEME ========== */
+body.light {
+  background: linear-gradient(135deg, #e0f2fe, #ffffff);
+  color: #0f172a;
+}
+
+body.light .card {
+  background: rgba(255,255,255,0.9);
+}
+
+body.light .bar {
+  background: #cbd5e1;
+}
+
+body.light #fill {
+  background: linear-gradient(90deg, #16a34a, #22c55e);
+}
+
+body.light button {
+  background: #e2e8f0;
+}
+
+/* ========== SMALL HEIGHT ADJUSTMENT ========== */
+@media (max-height: 720px) {
+  .video-frame {
+    height: 270px;
+  }
+
+  canvas {
+    height: 230px;
+  }
+}
+
+
+/* ========== NAVIGATION ========== */
+.nav-links {
+  position: absolute;
+  left: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+body.dark .nav-links a {
+  color: #cbd5f5;
+}
+
+body.light .nav-links a {
+  color: #1e293b;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ========== FEATURES PAGE ========== */
+.features-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px;
+}
+
+.features-card {
+  padding: 25px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+body.dark .features-card {
+  background: linear-gradient(145deg, #020617, #020617);
+}
+
+body.light .features-card {
+  background: rgba(255,255,255,0.95);
+}
+
+.features-card h2 {
+  margin-top: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.features-card p,
+.features-card li {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.features-card ul {
+  padding-left: 20px;
+}

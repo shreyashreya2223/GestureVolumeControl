@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gesture Volume Control – Features</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="dark">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1 class="main-title">Gesture Volume Control</h1>
+
+    <!-- Navigation -->
+    <div class="nav-links">
+      <a href="/">Dashboard</a>
+      <a href="/features">Features</a>
+    </div>
+
+    <!-- Toggles -->
+    <div class="header-toggles">
+      <div>
+        <span>Detection</span>
+        <label class="switch">
+          <input type="checkbox" id="detectToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <div>
+        <span>Theme</span>
+        <label class="switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="features-container">
+
+    <div class="features-card">
+      <h2>Project Overview</h2>
+      <p>
+        Gesture Volume Control is a real-time computer vision based system that allows
+        users to control system audio levels using hand gestures captured through a webcam.
+        The application integrates MediaPipe hand tracking with a web-based dashboard
+        for real-time visualization and interaction.
+      </p>
+    </div>
+
+    <div class="features-card">
+      <h2>Core Functionalities</h2>
+      <ul>
+        <li>Real-time hand landmark detection</li>
+        <li>Distance-based volume control with smoothing</li>
+        <li>Live webcam feed streamed via Flask</li>
+        <li>Manual gesture calibration (minimum and maximum)</li>
+        <li>Start and stop gesture detection</li>
+        <li>Real-time FPS and system feedback</li>
+      </ul>
+    </div>
+
+    <div class="features-card">
+      <h2>User Interface</h2>
+      <ul>
+        <li>Professional dashboard layout</li>
+        <li>Dark and light theme support</li>
+        <li>Interactive volume bar and history graph</li>
+        <li>Responsive layout for different screen sizes</li>
+      </ul>
+    </div>
+
+    <div class="features-card">
+      <h2>Technology Stack</h2>
+      <ul>
+        <li>Python, OpenCV, MediaPipe</li>
+        <li>Flask for backend and video streaming</li>
+        <li>HTML, CSS, JavaScript for frontend</li>
+        <li>System audio control using Pycaw (Windows)</li>
+      </ul>
+    </div>
+
+    <div class="features-card">
+      <h2>Applications</h2>
+      <ul>
+        <li>Touchless media control</li>
+        <li>Accessibility-focused interaction systems</li>
+        <li>Human–Computer Interaction research</li>
+        <li>Smart environment demonstrations</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>

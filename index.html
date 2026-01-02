@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gesture Volume Control</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="dark">
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1 class="main-title">Gesture Volume Control</h1>
+
+    <!-- Navigation -->
+    <div class="nav-links">
+      <a href="/">Dashboard</a>
+      <a href="/features">Features</a>
+    </div>
+
+    <!-- Header Toggles -->
+    <div style="display:flex; gap:16px; position:absolute; right:30px; align-items:center;">
+
+      <!-- Detection Toggle -->
+      <div style="display:flex; align-items:center; gap:6px; font-size:14px;">
+        <span>Detection</span>
+        <label class="switch">
+          <input type="checkbox" id="detectToggle" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- Theme Toggle -->
+      <div style="display:flex; align-items:center; gap:6px; font-size:14px;">
+        <span>Theme</span>
+        <label class="switch">
+          <input type="checkbox" id="themeToggle">
+          <span class="slider"></span>
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DASHBOARD -->
+  <div class="dashboard">
+
+    <!-- LEFT PANEL -->
+    <div class="card left-panel">
+      <div class="card-title">Live Gesture Control</div>
+
+      <img src="/video" class="video-frame" alt="Live Gesture Feed">
+
+      <div class="bar">
+        <div id="fill"></div>
+      </div>
+
+      <p id="vol">Volume: 0%</p>
+      <p id="status" class="waiting">Status: Waiting</p>
+
+      <div class="buttons">
+        <button onclick="calibrateMin()">Set MIN</button>
+        <button onclick="calibrateMax()">Set MAX</button>
+      </div>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="card right-panel">
+      <div class="card-title">Volume History</div>
+
+      <canvas id="volumeChart" width="400" height="260"></canvas>
+
+      <p id="fps" style="text-align:center; margin-top:10px;">FPS: 0</p>
+    </div>
+
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
